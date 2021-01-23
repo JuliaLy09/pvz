@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+<head>
+	<title>Автоматизированный пункт выдачи заказов</title>
+	<meta charset='utf-8'>
+	<link rel="stylesheet" href="main.css" type="text/css" media="all">
+	<script src="capture.js"> </script>
+	<script src="request.js"> </script>
+	<script type="text/javascript" id="database" src="BD/1.txt">
+</script>
+</head>
+<body>
+<div class="contentarea">
+ <div class="step1">
+	<h1>
+		Шаг 1. Номер заказа
+	</h1>
+	<p>
+	  <label for="text">Введите номер заказа:</label>
+      <input type="text" name="text" id="text">
+	  <button type="submit" value="text">Поиск</button>
+    </p>
+     <div id="result"></div>
+ </div>
+	<h1>
+		Шаг 2. Идентификация личности
+	</h1>
+	<p>
+		Поднесите, пожалуйста, паспорт к считывателю изображения.
+		Данные вашего документа мы сверям с данными получателя.
+		Если они совпадают, вы увидите статус - <font color="#08AF30"> <b>успешно</b></font>.
+	</p>
+	
+
+  <div class="camera">
+    <video id="video">Video stream not available.</video>
+    <button id="startbutton">Распознать</button> 
+  </div>
+  <canvas id="canvas">
+  </canvas>
+  <div class="output">
+     <img id="photo" alt="The screen capture will appear in this box.">
+  </div>
+		<!--<select id="langs">
+        <option value="rus" selected>Русский</option>
+        <option value="eng">English</option>
+        </select>
+	     <button type="button" id="start">Начать</button>
+	    <script src='https://cdnjs.cloudflare.com/ajax/libs/tesseract.js/2.1.1/tesseract.min.js'></script>
+        <script src="script.js"></script>-->
+	
+	<p>
+<!--Visit our article <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebRTC_API/Taking_still_photos"> Taking still photos with WebRTC</a> to learn more about the technologies used here.
+	-->	
+	</p>
+  <div class="status">
+	<p>
+        Статус:
+		<!--<div id="log" style="min-height: 200px; border: 1px solid #eee"></div>-->
+	</p>
+	      <!--переключатель языков  -->
+    <select id="langs">
+        <option value="rus" selected>Русский</option>
+        <option value="eng">English</option>
+    </select>
+
+    <!--инпут для загрузки файла  -->
+   <!-- <input type="file" id="file" />
+	  <div id="file">
+	  <script>
+		 var file = document.getElementById("photo","src");
+	  </script>
+      </div>-->
+
+    <!-- выводим состояние процесса -->
+    <div id="log" style="min-height: 200px; border: 1px solid #eee"></div>
+
+    <!-- кнопка Начать обработку -->
+    <button type="button" id="start">Начать</button>
+
+    <!-- подключаем библиотеку и наш скрипт-->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/tesseract.js/2.1.1/tesseract.min.js'></script>
+    <script src="script.js"></script>
+	  
+  </div>
+	<p><a href="index.html"><img src="files/exit.png" alt="" width="199" height="45" align="right"/></a></p>
+</div>
+</body>
+</html>
